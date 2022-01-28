@@ -4,7 +4,7 @@
 		<TargetFrameworks>net6</TargetFrameworks>
 		<LangVersion>10.0</LangVersion>
 		<AssemblyName>RedLockNet.SERedis</AssemblyName>
-		<PackageId>RedLock.net</PackageId>
+		<PackageId>Hexesoft.RedLock.net</PackageId>
 		<RootNamespace>RedLockNet.SERedis</RootNamespace>
 		<Title>RedLock.net</Title>
 		<Description>An implementation of the Redlock distributed lock algorithm. Private hexesoft project forked from https://github.com/samcook/RedLock.net</Description>		

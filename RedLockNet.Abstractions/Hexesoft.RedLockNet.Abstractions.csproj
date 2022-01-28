@@ -4,7 +4,7 @@
 		<TargetFrameworks>net6</TargetFrameworks>
 		<LangVersion>10.0</LangVersion>
 		<AssemblyName>RedLockNet.Abstractions</AssemblyName>
-		<PackageId>RedLock.net.Abstractions</PackageId>
+		<PackageId>Hexesoft.RedLock.net.Abstractions</PackageId>
 		<RootNamespace>RedLockNet</RootNamespace>
 		<Title>RedLock.net Abstractions</Title>
 		<Description>Abstractions for the RedLock.net package. Private hexesoft project forked from https://github.com/samcook/RedLock.net</Description>		
