@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29709.97
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1DF05864-1C9B-442D-A425-0A14C0D5765B}"
 	ProjectSection(SolutionItems) = preProject
@@ -13,11 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		RedLock.snk = RedLock.snk
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedLockNet.SERedis", "RedLockNet.SERedis\RedLockNet.SERedis.csproj", "{024849E0-03AF-4A6E-8CD5-D51EBB10ECB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexesoft.RedLockNet.SERedis", "RedLockNet.SERedis\Hexesoft.RedLockNet.SERedis.csproj", "{024849E0-03AF-4A6E-8CD5-D51EBB10ECB1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedLockNet.Abstractions", "RedLockNet.Abstractions\RedLockNet.Abstractions.csproj", "{BB176C1F-C520-4FB9-99CA-2326F8FC6050}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexesoft.RedLockNet.Abstractions", "RedLockNet.Abstractions\Hexesoft.RedLockNet.Abstractions.csproj", "{BB176C1F-C520-4FB9-99CA-2326F8FC6050}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedLockNet.Tests", "RedLockNet.Tests\RedLockNet.Tests.csproj", "{4F9D3DBD-28D0-45FB-8A83-DCB0EECB00CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hexesoft.RedLockNet.Tests", "RedLockNet.Tests\Hexesoft.RedLockNet.Tests.csproj", "{4F9D3DBD-28D0-45FB-8A83-DCB0EECB00CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net461;net472;netcoreapp2.1</TargetFrameworks>
+		<TargetFrameworks>net6</TargetFrameworks>
+		<LangVersion>10.0</LangVersion>
 		<AssemblyName>RedLockNet.Tests</AssemblyName>
 		<RootNamespace>RedLockNet.Tests</RootNamespace>
 		<SignAssembly>True</SignAssembly>
@@ -10,21 +11,20 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="JetBrains.Annotations" Version="10.4.0" />
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
-		<PackageReference Include="NUnit" Version="3.12.0" />
-		<PackageReference Include="NUnit3TestAdapter" Version="3.16.1">
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+		<PackageReference Include="NUnit" Version="3.13.2" />
+		<PackageReference Include="NUnit3TestAdapter" Version="4.2.1">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Redis-64" Version="3.0.503" />
 
-		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\RedLockNet.SERedis\RedLockNet.SERedis.csproj" />
-		<ProjectReference Include="..\RedLockNet.Abstractions\RedLockNet.Abstractions.csproj" />
+		<ProjectReference Include="..\RedLockNet.SERedis\Hexesoft.RedLockNet.SERedis.csproj" />
+		<ProjectReference Include="..\RedLockNet.Abstractions\Hexesoft.RedLockNet.Abstractions.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
