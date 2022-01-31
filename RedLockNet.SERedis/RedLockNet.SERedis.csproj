@@ -42,6 +42,8 @@
 		<PackageReference Include="StackExchange.Redis" Version="2.2.88" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+		<PackageReference Include="System.Diagnostics.PerformanceCounter" Version="6.0.0" />
+		<PackageReference Include="System.IO.Pipelines" Version="6.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>
