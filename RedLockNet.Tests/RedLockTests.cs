@@ -25,13 +25,13 @@ namespace RedLockNet.Tests
         {
             ThreadPool.SetMinThreads(100, 100);
 
-			loggerFactory = LoggerFactory.Create(b => b.AddSimpleConsole(opts =>
-			{
-				opts.TimestampFormat = "HH:mm:ss.ffff ";
-				opts.SingleLine = true;
-			}).SetMinimumLevel(LogLevel.Debug));
-			logger = loggerFactory.CreateLogger<RedLockTests>();
-		}
+            loggerFactory = LoggerFactory.Create(b => b.AddSimpleConsole(opts =>
+            {
+                opts.TimestampFormat = "HH:mm:ss.ffff ";
+                opts.SingleLine = true;
+            }).SetMinimumLevel(LogLevel.Debug));
+            logger = loggerFactory.CreateLogger<RedLockTests>();
+        }
 
         // make sure redis is running on these
         private static readonly EndPoint ActiveServer1 = new DnsEndPoint("localhost", 6379);
@@ -248,53 +248,47 @@ namespace RedLockNet.Tests
             }
         }
 
-		[Test]
-		public async Task TestContendedExtendCancellation()
-		{
-			using (var redisLockFactory = RedLockFactory.Create(new List<RedLockEndPoint> { ActiveServer1 }, loggerFactory))
-			{
-				var resource = $"testcontendedlock:{Guid.NewGuid()}";
+        [Test]
+        public async Task TestContendedExtendCancellation()
+        {
+            using (var redisLockFactory = RedLockFactory.Create(new List<RedLockEndPoint> { ActiveServer1 }, loggerFactory))
+            {
+                var resource = $"testcontendedlock:{Guid.NewGuid()}";
 
-				var tasks = new List<Task>();
+                var tasks = new List<Task>();
 
-				tasks.Add(Task.Run(() => ContendedSleep(redisLockFactory, resource, 1, TimeSpan.FromSeconds(2))));
+                tasks.Add(Task.Run(() => ContendedSleep(redisLockFactory, resource, 1, TimeSpan.FromSeconds(2))));
 
-				// sleep for just shorter than the duration of the previous lock, so that the second lock should fail to be acquired on the first attempt but successfully acquired on a retry
-				await Task.Delay(TimeSpan.FromSeconds(1.99));
+                // sleep for just shorter than the duration of the previous lock, so that the second lock should fail to be acquired on the first attempt but successfully acquired on a retry
+                await Task.Delay(TimeSpan.FromSeconds(1.99));
 
-				tasks.Add(Task.Run(() => ContendedSleep(redisLockFactory, resource, 2, TimeSpan.FromSeconds(2))));
+                tasks.Add(Task.Run(() => ContendedSleep(redisLockFactory, resource, 2, TimeSpan.FromSeconds(2))));
 
-				await Task.WhenAll(tasks);
-			}
-		}
+                await Task.WhenAll(tasks);
+            }
+        }
 
-		private async Task ContendedSleep(RedLockFactory redisLockFactory, string resource, int i, TimeSpan duration)
-		{
-			logger.LogInformation("Starting task {i}", i);
+        private async Task ContendedSleep(RedLockFactory redisLockFactory, string resource, int i, TimeSpan duration)
+        {
+            logger.LogInformation("Starting task {i}", i);
 
-			IRedLock redlock;
-			var acquired = false;
-			await using (redlock = await redisLockFactory.CreateLockAsync(resource, duration))
-			{
-				if (redlock.IsAcquired)
-				{
-					acquired = true;
-					await Task.Delay(duration);
-				}
-			}
+            IRedLock redlock;
+            var acquired = false;
+            await using (redlock = await redisLockFactory.CreateLockAsync(resource, duration))
+            {
+                if (redlock.IsAcquired)
+                {
+                    acquired = true;
+                    await Task.Delay(duration);
+                }
+            }
 
-			logger.LogInformation("Ending task {i}, acquired: {acquired}, extendCount: {extendCount}", i, acquired, redlock.ExtendCount);
+            logger.LogInformation("Ending task {i}, acquired: {acquired}, extendCount: {extendCount}", i, acquired, redlock.ExtendCount);
 
-			Assert.That(acquired, Is.True);
-			Assert.That(redlock.ExtendCount, Is.GreaterThanOrEqualTo(1));
-		}
+            Assert.That(acquired, Is.True);
+            Assert.That(redlock.ExtendCount, Is.GreaterThanOrEqualTo(1));
+        }
 
-		[Test]
-		public void TestLockReleasedAfterTimeout()
-		{
-			using (var lockFactory = RedLockFactory.Create(AllActiveEndPoints, loggerFactory))
-			{
-				var resource = $"testrenewinglock:{Guid.NewGuid()}";
         [Test]
         public void TestLockReleasedAfterTimeout()
         {

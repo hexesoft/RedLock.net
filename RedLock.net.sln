@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedLockNet.Abstractions", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedLockNet.SERedis", "RedLockNet.SERedis\RedLockNet.SERedis.csproj", "{FBC362A6-EBB6-4847-BA52-409C5575AB4D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedLockNet.Tests", "RedLockNet.Tests\RedLockNet.Tests.csproj", "{A1A4DCE3-0DE8-4C90-A316-1953AFF9099A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{FBC362A6-EBB6-4847-BA52-409C5575AB4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBC362A6-EBB6-4847-BA52-409C5575AB4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBC362A6-EBB6-4847-BA52-409C5575AB4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1A4DCE3-0DE8-4C90-A316-1953AFF9099A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1A4DCE3-0DE8-4C90-A316-1953AFF9099A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1A4DCE3-0DE8-4C90-A316-1953AFF9099A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1A4DCE3-0DE8-4C90-A316-1953AFF9099A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
