@@ -7,7 +7,7 @@
 		<PackageId>Hexesoft.RedLock.net</PackageId>
 		<RootNamespace>RedLockNet.SERedis</RootNamespace>
 		<Title>RedLock.net</Title>
-		<Description>An implementation of the Redlock distributed lock algorithm. Private hexesoft project forked from https://github.com/samcook/RedLock.net</Description>		
+		<Description>An implementation of the Redlock distributed lock algorithm. Private hexesoft project forked from https://github.com/samcook/RedLock.net</Description>
 		<SignAssembly>True</SignAssembly>
 		<AssemblyOriginatorKeyFile>..\RedLock.snk</AssemblyOriginatorKeyFile>
 		<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
@@ -15,7 +15,6 @@
 		<GeneratePackageOnBuild Condition="'$(Configuration)' == 'Release'">true</GeneratePackageOnBuild>
 		<Version Condition="'$(BUILD_BUILDNUMBER)' == ''">$([System.DateTime]::Now.ToString('yyyy.M.d'))-dev</Version>
 		<Version Condition="'$(BUILD_BUILDNUMBER)' != ''">$(BUILD_BUILDNUMBER)</Version>
-		<Version>2022.10.18.1</Version>
 	</PropertyGroup>
 
 	<Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
@@ -25,17 +24,17 @@
 	</Target>
 
 	<ItemGroup>
-	  <None Remove="Lua\Extend.lua" />
-	  <None Remove="Lua\Unlock.lua" />
+		<None Remove="Lua\Extend.lua" />
+		<None Remove="Lua\Unlock.lua" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Include="..\redlock-icon.png" Link="redlock-icon.png" Pack="true" Visible="false" PackagePath="" />
+		<None Include="..\redlock-icon.png" Link="redlock-icon.png" Pack="true" Visible="false" PackagePath="" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Include="Lua\Extend.lua" />
-	  <EmbeddedResource Include="Lua\Unlock.lua" />
+		<EmbeddedResource Include="Lua\Extend.lua" />
+		<EmbeddedResource Include="Lua\Unlock.lua" />
 	</ItemGroup>
 
 	<ItemGroup>
