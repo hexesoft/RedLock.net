@@ -17,7 +17,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0-rc.1.23419.4" />
+	  <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
