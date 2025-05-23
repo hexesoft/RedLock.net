@@ -38,9 +38,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="StackExchange.Redis" Version="2.8.24" />
-		<PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.2" />
-		<PackageReference Include="System.IO.Pipelines" Version="9.0.2" />
+		<PackageReference Include="StackExchange.Redis" Version="2.8.37" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.5" />
+		<PackageReference Include="System.IO.Pipelines" Version="9.0.5" />
 	</ItemGroup>
 
 	<ItemGroup>
